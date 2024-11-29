@@ -42,10 +42,10 @@ jobs:
     - name: Check badge creation
       run: ls -l .github/badges
       
-    - name: Commit changes
+    - name: Commit and Push Changes
       uses: EndBug/add-and-commit@v9
       with:
-        github_token: ${{ secrets.PAT_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # Add this line
         message: Updated JaCoCo badges
         add: .github/badges/*.svg
         push: true
